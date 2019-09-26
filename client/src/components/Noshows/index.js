@@ -1,1 +1,1 @@
-export {default} from './Noshows'
+export {default} from './Noshows';

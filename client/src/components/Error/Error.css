@@ -1,4 +1,4 @@
-#error-div{
+#error-div {
     width:60vw;
     background-color:#00b4b3;
     border:10px solid grey;
@@ -8,7 +8,7 @@
     animation: fadein 0.5s;
 }
 
-#error-wrapper{
+#error-wrapper {
     width:100vw;
     height:100vh;
     background-color:#e4e4e4;

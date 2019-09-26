@@ -9,10 +9,11 @@ const App = () => (
     <div>
       <Switch>
         <Route exact path='/' component={home} />
+        <Route path='/' component={error} />
         <Route exact path='/error' component={error} />
-      </Switch>      
+      </Switch>
     </div>
   </Router>
-)
+);
 
 export default App;

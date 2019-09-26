@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './EventList.css';
-import API from '../../utils/API'
+import API from '../../utils/API';
 import EventListItem from '../Event_List_Item';
 import Noshows from '../Noshows';
 
 class EventList extends Component {
     state = {
-        shows: []
+        shows: 'no-query'
     };
 
     componentDidMount() {
@@ -31,6 +31,8 @@ class EventList extends Component {
 
         if (!shows.length) {
             showsReturnDiv = <Noshows />
+        } else if (shows === 'no-query') {
+            showsReturnDiv = <div></div>
         } else {
             showsReturnDiv =
                 <table className='shows-table'>
@@ -43,7 +45,8 @@ class EventList extends Component {
                                 city={show.venue.city}
                                 state={show.venue.region}
                                 country={show.venue.country}
-                                tickets={show.offers[0].url}
+                                // check if tickets are available for each show
+                                tickets={show.offers.length ? show.offers[0].url : 'none'}
                             />
                         )}
                     </tbody>
@@ -55,7 +58,7 @@ class EventList extends Component {
                 {showsReturnDiv}
             </div>
         );
-    }
-}
+    };
+};
 
 export default EventList;

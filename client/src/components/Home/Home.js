@@ -16,7 +16,7 @@ class Home extends Component {
     //when the component mounts, make the bandsintown API call
     componentDidMount() {
         this.bandsInTownQuery();
-    }
+    };
 
     //grab the band name from the url
     getBandName = () => {
@@ -24,21 +24,21 @@ class Home extends Component {
         const url = window.location.href;
 
         //isolate the query parameter, 'artist=...'
-        const query = url.slice(url.indexOf('?') + 1);
+        const query = url.slice(url.indexOf('?'));
 
         //initialize the url-encoded band name
         let band = '';
 
         //check if the query parameter is correctly inputed as 'artist'
-        if (query.slice(0, 6).toLowerCase() === 'artist') {
+        if (query.slice(0, 7).toLowerCase() === '?artist') {
             //grab the text after 'artist='
-            band = query.slice(7);
+            band = query.slice(8);
         } else {
             //user mal-formatted the query; send them to error page
-            window.location = '/error'
+            window.location = '/error';
         }
         return band;
-    }
+    };
 
     bandsInTownQuery = () => {
         //get the band name
@@ -49,11 +49,11 @@ class Home extends Component {
             .then(response =>
                 this.setState({
                     name: response.data.name,
-                    imageURL: response.data.image_url
+                    imageURL: response.data.thumb_url
                 })
             )
             .catch(err => console.log(err))
-    }
+    };
 
     render() {
         const name = this.state.name;
@@ -78,8 +78,8 @@ class Home extends Component {
             <div>
                 {returnDiv}
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Home;

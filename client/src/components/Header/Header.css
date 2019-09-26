@@ -1,8 +1,8 @@
-.header-div{
+.header-div {
     padding:20px;
 }
 
-#band-image{
+#band-image {
     height:80px;
     width:80px;
     display:inline-block;
@@ -10,25 +10,25 @@
     border-radius:5px;
 }
 
-#band-text-div{
+#band-text-div {
     margin:0px 10px;
     display:inline-block;
     vertical-align: middle;
 }
 
-#band-name{
+#band-name {
     color:#00b4b3; 
     font-weight:bold;
     margin:5px 0px;
 }
 
-#upcoming-events{
+#upcoming-events {
     font-weight:bold;
     margin:5px 0px;
 }
 
-@media only screen and (min-width: 650px){
-    .header-div{
+@media only screen and (min-width: 650px) {
+    .header-div {
         width:82vw;
         margin:0px auto;
 

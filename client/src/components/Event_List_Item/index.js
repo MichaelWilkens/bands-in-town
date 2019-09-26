@@ -1,1 +1,1 @@
-export {default} from './EventListItem' 
+export {default} from './EventListItem';

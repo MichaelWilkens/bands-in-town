@@ -20,12 +20,15 @@ function EventListItem(props) {
                         {props.country === 'United States' ? props.state : props.country}
                     </p>
                 </td>
-                <td className='show-button-td'>
+                {/* check if the ticket prop was passed */}
+                {props.tickets !== 'none' ?
+                (<td className='show-button-td'>
                     <a className='show-a-tag' target='_blank' href={props.tickets}>Tickets</a>
-                </td>
+                </td>) 
+                : (<div></div>)}
             </div>
         </tr>
     );
-}
+};
 
 export default EventListItem;
