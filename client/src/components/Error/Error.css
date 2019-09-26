@@ -1,0 +1,26 @@
+#error-div{
+    width:60vw;
+    background-color:#00b4b3;
+    border:10px solid grey;
+    color:#e4e4e4;
+    border-radius:30px;
+    padding:30px;
+    animation: fadein 0.5s;
+}
+
+#error-wrapper{
+    width:100vw;
+    height:100vh;
+    background-color:#e4e4e4;
+    padding:40px;
+}
+
+#error-h2,
+#error-h4 {
+    margin-top:50px;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
